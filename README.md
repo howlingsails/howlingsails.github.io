@@ -1,3 +1,3 @@
-# gp-builders-website
+# Howling Sails Studio WebStie  
 
-Sample for a static site
+Holla, 
