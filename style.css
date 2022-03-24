@@ -84,6 +84,8 @@ a:active {
     margin: 5px;
     font-size: 12px;
     padding: 6px;
+    vertical-align: middle;
+
 }
 
 .four-column {
@@ -96,6 +98,7 @@ a:active {
     flex-grow: 0;
     align-content: visible;
     margin: 5px;
+    vertical-align: middle;
 
 }
 
