@@ -41,6 +41,10 @@ h4 {
     margin:0;
 }
 
+.section-header {
+    text-align: center;
+}
+
 h5 {
     font-family: 'Source+Sans+Pro', sans-serif;
     font-weight:300;
@@ -79,7 +83,7 @@ a:active {
 .link-column {
     border: 1px solid rgb(194, 127, 3);
     border-radius: 12px;
-    width: 150px;
+    width: 200px;
     height: 15px;
     margin: 5px;
     font-size: 12px;
@@ -89,17 +93,20 @@ a:active {
 }
 
 .four-column {
-    display: flex; 
-    flex: 1 1 220px;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    display: flex;
     flex-direction: row;
-    overflow-y: 1;
-    flex-grow: 0;
-    align-content: visible;
+    flex-wrap: wrap;
     margin: 5px;
     vertical-align: middle;
 
+}
+
+.box-me {
+    border: solid 1px;
+    border-radius: 25px;
+    border-color: #c5a427;
+    margin: 1em;
+    padding: 0.5em;
 }
 
 
