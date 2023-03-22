@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /world_vision//world/Pateia/state/
+
+User-agent: *
+Disallow: /world_vision//world/Pateia/burg/
+
+User-agent: *
+Disallow: /world_vision//world/Pateia/marker/
