@@ -145,7 +145,7 @@ function createInteractiveElements() {
     }
 
     const speak_me = document.getElementsByClassName("speakToMeNow");
-    const fragment = document.createDocumentFragment(); // create a document fragment
+    const fragment2 = document.createDocumentFragment(); // create a document fragment
     
     for (let speakToMeNowIndex = 0; speakToMeNowIndex < speak_me.length; speakToMeNowIndex++) {
       let commander_buttons = document.createElement("div");
@@ -176,11 +176,11 @@ function createInteractiveElements() {
       commander_buttons.appendChild(copyTextClipboardButton);
       commander_buttons.appendChild(copyHTMLToClipBoardButton);
     
-      fragment.appendChild(commander_buttons); // append the elements to the fragment
+      fragment2.appendChild(commander_buttons); // append the elements to the fragment
     }
     
     for (let speakToMeNowIndex = 0; speakToMeNowIndex < speak_me.length; speakToMeNowIndex++) {
-      speak_me[speakToMeNowIndex].appendChild(fragment.cloneNode(true)); // append the fragment to the DOM outside of the loop
+      speak_me[speakToMeNowIndex].appendChild(fragment2.cloneNode(true)); // append the fragment to the DOM outside of the loop
     }
     
     
