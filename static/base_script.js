@@ -193,13 +193,13 @@ function createInteractiveElements() {
         if (target.classList.contains("navigation")) {
             return jumpTop();
         } else if (target.classList.contains("text_to_speach")) {
-            let text_to_say = repeatTrimEnd(extractInnerText(event));
+            let text_to_say = repeatedlyTrimString(extractInnerText(event));
             console.log(text_to_say);
             speakToMeNow(text_to_say)
         } else if (target.classList.contains("cancel")) {
             stopSpeaking();
         } else if (target.classList.contains("content_copy")) {
-            let text_to_say = repeatTrimEnd(extractInnerText(event));
+            let text_to_say = repeatedlyTrimString(extractInnerText(event));
             console.log(text_to_say);
             navigator.clipboard.writeText(text_to_say);
         } else if (target.classList.contains("more_vert")) {
@@ -230,26 +230,29 @@ function createInteractiveElements() {
     });
 }
 
-function repeatTrimEnd(script) {
-    while (true) {
-      // trim any whitespace and empty lines off the end of the string
-      script = script.trimEnd();
-  
-      // check if the string ends with any of the following substrings
-      if (script.endsWith("navigation") ||
-          script.endsWith("more_vert") ||
-          script.endsWith("map") ||
-          script.endsWith("text_to_speech") ||
-          script.endsWith("cancel")) {
-        // if so, remove the substring from the end of the string
-        script = script.slice(0, -substr.length);
-      } else {
-        // if not, break out of the loop and return the trimmed string
-        break;
-      }
+function repeatedlyTrimString(input) {
+    const stringsToRemove = ['navigation', 'more_vert', 'text_to_speech', 'cancel', 'content_copy', 'html'];
+    
+    let trimmedString = input.trim(); // trim leading/trailing whitespace
+    let foundMatch = true;
+    
+    while (foundMatch) {
+        foundMatch = false;
+        
+        for (let i = 0; i < stringsToRemove.length; i++) {
+        const stringToRemove = stringsToRemove[i];
+        
+        if (trimmedString.endsWith(stringToRemove)) {
+            trimmedString = trimmedString.slice(0, -stringToRemove.length).trim();
+            foundMatch = true;
+            break;
+        }
+        }
     }
-    return script;
-  }
+    
+    return trimmedString;
+}
+      
 
 
 /*
