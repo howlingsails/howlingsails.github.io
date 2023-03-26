@@ -218,7 +218,7 @@ function createInteractiveElements() {
                 "<div class=\"source\"><a href=\"" + window.location.href + "\" target=\"_blank\">source</a>" +
                 "</div>\n" +
                 "<div class='speakToMeNow'>\n\t\t" + html_to_copy + "\n" +
-                "</div>\n" +
+                "</div>\n";
             navigator.clipboard.writeText(generatedHtml);
         }
 
