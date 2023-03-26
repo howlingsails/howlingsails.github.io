@@ -190,27 +190,32 @@ function createInteractiveElements() {
         const target = event.target
         console.log(target)
         //debugger;
+        let pattern = /( text_to_speech,| cancel| content_copy| html)+$/g;
         if (target.classList.contains("navigation")) {
             return jumpTop();
         } else if (target.classList.contains("text_to_speach")) {
-            let text_to_say = extractInnerText(event);
+            let text_to_say = extractInnerText(event.replace(pattern,"");
             speakToMeNow(text_to_say)
         } else if (target.classList.contains("cancel")) {
             stopSpeaking();
         } else if (target.classList.contains("content_copy")) {
-            let text_to_say = extractInnerText(event);
+            let text_to_say = extractInnerText(event).replace(pattern,"")
+            ;
             navigator.clipboard.writeText(text_to_say);
         } else if (target.classList.contains("more_vert")) {
             pop_menu(target);
         } else if (target.classList.contains("html")) {
+            debugger;
             const speak_me_target = event.target.closest(".speakToMeNow")
             let html_to_copy = speak_me_target.innerHTML.split("<div title=\"Navigate to")[0]
                 .replace("\n\n", "\n")
                 .replace("\s\s", "\s")
+                .replace(pattern,"")
             if (html_to_copy.includes("")) {
                 html_to_copy = speak_me_target.innerHTML.split("<div class=\"commander_button")[0]
                     .replace("\n\n", "\n")
                     .replace("\s\s", "\s")
+                    .replace(pattern,"")
             }
 
             let generatedHtml =
