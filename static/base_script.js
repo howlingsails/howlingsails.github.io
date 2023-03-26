@@ -214,12 +214,10 @@ function createInteractiveElements() {
             }
 
             let generatedHtml =
-                "<div class=\"burgSummary\">\n" +
-                "\t<div class=\"source\"><a href=\"" + window.location.href + "\" target=\"_blank\">source</a>" +
-                "\t</div>\n" +
-                "\t<div class='speakToMeNow'>\n\t\t" + html_to_copy + "\n" +
-                "\t</div>\n" +
-                "</div>";
+                "<div class=\"source\"><a href=\"" + window.location.href + "\" target=\"_blank\">source</a>" +
+                "</div>\n" +
+                "<div class='speakToMeNow'>\n\t\t" + html_to_copy + "\n" +
+                "</div>\n" +
             navigator.clipboard.writeText(generatedHtml);
         }
 
