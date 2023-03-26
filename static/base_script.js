@@ -205,7 +205,6 @@ function createInteractiveElements() {
         } else if (target.classList.contains("more_vert")) {
             pop_menu(target);
         } else if (target.classList.contains("html")) {
-            debugger;
             const speak_me_target = event.target.closest(".speakToMeNow")
             let html_to_copy = speak_me_target.innerHTML.split("<div title=\"Navigate")[0]
                 .replace("\n\n", "\n")
