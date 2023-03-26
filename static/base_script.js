@@ -194,11 +194,13 @@ function createInteractiveElements() {
             return jumpTop();
         } else if (target.classList.contains("text_to_speach")) {
             let text_to_say = extractInnerText(event);
+            console.log(text_to_say);
             speakToMeNow(text_to_say)
         } else if (target.classList.contains("cancel")) {
             stopSpeaking();
         } else if (target.classList.contains("content_copy")) {
             let text_to_say = extractInnerText(event);
+            console.log(text_to_say);
             navigator.clipboard.writeText(text_to_say);
         } else if (target.classList.contains("more_vert")) {
             pop_menu(target);
