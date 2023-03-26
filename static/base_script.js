@@ -214,7 +214,7 @@ function createInteractiveElements() {
                     .replace("\s\s", "\s")
             }
 
-            let generatedHtml =
+            const generatedHtml =
                 "<div class=\"source\"><a href=\"" + window.location.href + "\" target=\"_blank\">source</a>" +
                 "</div>\n" +
                 "<div class='speakToMeNow'>\n\t\t" + html_to_copy + "\n" +
