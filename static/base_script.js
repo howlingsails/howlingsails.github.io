@@ -194,7 +194,7 @@ function createInteractiveElements() {
         if (target.classList.contains("navigation")) {
             return jumpTop();
         } else if (target.classList.contains("text_to_speach")) {
-            let text_to_say = extractInnerText(event.replace(pattern,"");
+            let text_to_say = extractInnerText(event).replace(pattern,"");
             speakToMeNow(text_to_say)
         } else if (target.classList.contains("cancel")) {
             stopSpeaking();
@@ -271,9 +271,9 @@ function speakToMeNow(text) {
         let voices = window.speechSynthesis.getVoices();
         //speechRequest.voice = voices[0]; //Nora Siri
 
-        speechRequest.volume = 0.8; // From 0 to 1
+        speechRequest.volume = 1.0; // From 0 to 1
         speechRequest.rate = 1.0; // From 0.1 to 10
-        speechRequest.pitch = 1.1; // From 0 to 2
+        speechRequest.pitch = 1.0; // From 0 to 2
         speechRequest.text = splitText[i]
         if (window.speechSynthesis.speaking) {
             sleep(50)
