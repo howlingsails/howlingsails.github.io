@@ -205,14 +205,16 @@ function createInteractiveElements() {
         } else if (target.classList.contains("html")) {
             debugger;
             const speak_me_target = event.target.closest(".speakToMeNow")
-            let html_to_copy = speak_me_target.innerHTML.split("<div title=\"Navigate to")[0]
+            let html_to_copy = speak_me_target.innerHTML.split("<div title=\"Navigate")[0]
                 .replace("\n\n", "\n")
                 .replace("\s\s", "\s")
+            console.log(html_to_copy)
             if (html_to_copy.includes("")) {
                 html_to_copy = speak_me_target.innerHTML.split("<div class=\"commander_button")[0]
                     .replace("\n\n", "\n")
                     .replace("\s\s", "\s")
             }
+            console.log(html_to_copy)
 
             const generatedHtml =
                 "<div class=\"source\"><a href=\"" + window.location.href + "\" target=\"_blank\">source</a>" +
