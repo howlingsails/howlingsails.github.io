@@ -231,7 +231,7 @@ function createInteractiveElements() {
 }
 
 function repeatedlyTrimString(input) {
-    const stringsToRemove = ['navigation', 'more_vert', 'text_to_speech', 'cancel', 'content_copy', 'html'];
+    const stringsToRemove = ['map','navigation', 'more_vert', 'text_to_speech', 'cancel', 'content_copy', 'html'];
     
     let trimmedString = input.trim(); // trim leading/trailing whitespace
     let foundMatch = true;
