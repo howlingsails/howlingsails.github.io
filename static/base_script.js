@@ -209,12 +209,13 @@ function createInteractiveElements() {
                 .replace("\n\n", "\n")
                 .replace("\s\s", "\s")
             console.log(html_to_copy)
-            if (html_to_copy.includes("")) {
+            if (html_to_copy.includes("commander_button")) {
                 html_to_copy = speak_me_target.innerHTML.split("<div class=\"commander_button")[0]
                     .replace("\n\n", "\n")
-                    .replace("\s\s", "\s")
+                    .replace("\s\s", "\s");
+                console.log(html_to_copy);
+
             }
-            console.log(html_to_copy)
 
             const generatedHtml =
                 "<div class=\"source\"><a href=\"" + window.location.href + "\" target=\"_blank\">source</a>" +
