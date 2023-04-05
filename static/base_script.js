@@ -124,21 +124,19 @@ function createInteractiveElements() {
     const burg_summary_div = document.getElementsByClassName("burgSummary");
     const fragment = document.createDocumentFragment();
     
-    for (let speakToMeNowIndex = 0; speakToMeNowIndex < burg_summary_div.length; speakToMeNowIndex++) {
-      let top_button = document.createElement("div");
-      top_button.title = "Navigate to Top of Page";
-      top_button.className = "";
-      top_button.innerHTML = "<span class=\"material-symbols-outlined navigation top_button cmd\">navigation</span>";
-      top_button.addEventListener('click', jumpTop);
-      fragment.appendChild(top_button);
-    
-      let menu_button = document.createElement("div");
-      menu_button.title = "Section Menu";
-      menu_button.className = "";
-      menu_button.innerHTML = "<span class=\"material-symbols-outlined more_vert menu_button cmd\">more_vert</span>";
-      menu_button.addEventListener('click', pop_menu);
-      fragment.appendChild(menu_button);
-    }
+    let top_button = document.createElement("div");
+    top_button.title = "Navigate to Top of Page";
+    top_button.className = "";
+    top_button.innerHTML = "<span class=\"material-symbols-outlined navigation top_button cmd\">navigation</span>";
+    top_button.addEventListener('click', jumpTop);
+    fragment.appendChild(top_button);
+
+    let menu_button = document.createElement("div");
+    menu_button.title = "Section Menu";
+    menu_button.className = "";
+    menu_button.innerHTML = "<span class=\"material-symbols-outlined more_vert menu_button cmd\">more_vert</span>";
+    menu_button.addEventListener('click', pop_menu);
+    fragment.appendChild(menu_button);
     
     for (let speakToMeNowIndex = 0; speakToMeNowIndex < burg_summary_div.length; speakToMeNowIndex++) {
       burg_summary_div[speakToMeNowIndex].appendChild(fragment.cloneNode(true));
