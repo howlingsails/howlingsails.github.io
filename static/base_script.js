@@ -147,37 +147,35 @@ function createInteractiveElements() {
     const speak_me = document.getElementsByClassName("speakToMeNow");
     const fragment2 = document.createDocumentFragment(); // create a document fragment
     
-    for (let speakToMeNowIndex = 0; speakToMeNowIndex < speak_me.length; speakToMeNowIndex++) {
-      let commander_buttons = document.createElement("div");
-      commander_buttons.className = "commander_button";
-    
-      let speakToMeButton = document.createElement("div");
-      speakToMeButton.className = "speak_button cmd";
-      speakToMeButton.title = "Speak Text"
-      speakToMeButton.innerHTML = "<span class=\"material-symbols-outlined text_to_speach\">text_to_speech</span>"
-    
-      let noSpeakToMeButton = document.createElement("div");
-      noSpeakToMeButton.className = "cancel_speak_button cmd";
-      noSpeakToMeButton.title = "Stop Speaking"
-      noSpeakToMeButton.innerHTML = "<span class=\"material-symbols-outlined cancel\">cancel</span>"
-    
-      let copyTextClipboardButton = document.createElement("div");
-      copyTextClipboardButton.className = "copy_text_button cmd";
-      copyTextClipboardButton.title = "Copy Text to Clipboard"
-      copyTextClipboardButton.innerHTML = "<span class=\"material-symbols-outlined content_copy\">content_copy</span>"
-    
-      let copyHTMLToClipBoardButton = document.createElement("div");
-      copyHTMLToClipBoardButton.className = "copy_html_button cmd";
-      copyHTMLToClipBoardButton.title = "Copy HTML to clipboard"
-      copyHTMLToClipBoardButton.innerHTML = "<span class=\"material-symbols-outlined html\">html</span>"
-    
-      commander_buttons.appendChild(speakToMeButton);
-      commander_buttons.appendChild(noSpeakToMeButton);
-      commander_buttons.appendChild(copyTextClipboardButton);
-      commander_buttons.appendChild(copyHTMLToClipBoardButton);
-    
-      fragment2.appendChild(commander_buttons); // append the elements to the fragment
-    }
+    let commander_buttons = document.createElement("div");
+    commander_buttons.className = "commander_button";
+
+    let speakToMeButton = document.createElement("div");
+    speakToMeButton.className = "speak_button cmd";
+    speakToMeButton.title = "Speak Text"
+    speakToMeButton.innerHTML = "<span class=\"material-symbols-outlined text_to_speach\">text_to_speech</span>"
+
+    let noSpeakToMeButton = document.createElement("div");
+    noSpeakToMeButton.className = "cancel_speak_button cmd";
+    noSpeakToMeButton.title = "Stop Speaking"
+    noSpeakToMeButton.innerHTML = "<span class=\"material-symbols-outlined cancel\">cancel</span>"
+
+    let copyTextClipboardButton = document.createElement("div");
+    copyTextClipboardButton.className = "copy_text_button cmd";
+    copyTextClipboardButton.title = "Copy Text to Clipboard"
+    copyTextClipboardButton.innerHTML = "<span class=\"material-symbols-outlined content_copy\">content_copy</span>"
+
+    let copyHTMLToClipBoardButton = document.createElement("div");
+    copyHTMLToClipBoardButton.className = "copy_html_button cmd";
+    copyHTMLToClipBoardButton.title = "Copy HTML to clipboard"
+    copyHTMLToClipBoardButton.innerHTML = "<span class=\"material-symbols-outlined html\">html</span>"
+
+    commander_buttons.appendChild(speakToMeButton);
+    commander_buttons.appendChild(noSpeakToMeButton);
+    commander_buttons.appendChild(copyTextClipboardButton);
+    commander_buttons.appendChild(copyHTMLToClipBoardButton);
+
+    fragment2.appendChild(commander_buttons); // append the elements to the fragment
     
     for (let speakToMeNowIndex = 0; speakToMeNowIndex < speak_me.length; speakToMeNowIndex++) {
       speak_me[speakToMeNowIndex].appendChild(fragment2.cloneNode(true)); // append the fragment to the DOM outside of the loop
