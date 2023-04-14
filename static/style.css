@@ -83,9 +83,9 @@ body {
     background: var(--dark) url(/static/images/background/gravel.png);
     color: var(--text);
     font-family: 'Nunito';
-    font-size: 2em;
-    font-spacing: 2em;
-    line-height: 2em;
+    font-size: 1.5em;
+    font-spacing: 1.5em;
+    line-height: 1.5em;
     margin-left: 2%;
     margin-right: 2%;
     margin-top: 1%;
@@ -191,7 +191,7 @@ li {
 }
 
 .state_title {
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
 }
 
@@ -387,13 +387,27 @@ li {
 
 }
 
+.burgHeader {
+    background: var(--dark) url(/static/images/background/black-orchid.png);
+    border: solid 0.1em var(--warn);
+    border-radius: 0.5em;
+    cursor: pointer;
+    display: block;
+    letter-spacing: 0.2em;
+
+    margin: 0.1em;
+    padding: 0.2em;
+    text-shadow: -2px 2px var(--back);
+}
+
+
 .burgSummary {
     background: var(--back);
     border: 2px solid var(--warn);
     border-radius: 0.5em;
-    line-height: 1.5em;
-    margin: 0.1em 0.2em;
-    padding: 1.4em 1.5em 1.5em;
+    line-height: 1.2em;
+    margin: 0.2em 0.2em;
+    padding: 1em 1em 1em;
 }
 
 .cardContainer {
@@ -439,18 +453,6 @@ li {
     text-align: center;
 }
 
-.burgHeader {
-    background: var(--dark) url(/static/images/background/black-orchid.png);
-    border: solid 0.1em var(--warn);
-    border-radius: 0.5em;
-    cursor: pointer;
-    display: block;
-    letter-spacing: 0.2em;
-
-    margin: 0.2em;
-    padding: 0.5em;
-    text-shadow: -2px 2px var(--back);
-}
 
 small {
     font-size: 0.5em;
