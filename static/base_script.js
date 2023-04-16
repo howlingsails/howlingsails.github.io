@@ -22,6 +22,17 @@ function pop_menu(target, text, html) {
 
 }
 
+function createLinkItem(href, text, target) {
+    const linkItem = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = href;
+    link.text = text;
+    link.target = target;
+    link.className = 'hamburger-link';
+    linkItem.appendChild(link);
+    return linkItem;
+}
+
 function createHamburgerMenu() {
     // Get all elements with classname "burgSummary"
     const summaryElements = document.getElementsByClassName("section_group");
@@ -45,20 +56,40 @@ function createHamburgerMenu() {
     const navList = document.createElement("ul");
 
     // Add Top of Page
-            // Create a list item for each "burgSummary" element with an ID
-        const rootItem = document.createElement("li");
+    // Create a list item for each "burgSummary" element with an ID
+    const rootItem = document.createElement("li");
 
-        // Create a link for each list item
-        const link = document.createElement("a");
-        link.href = `#root_div`;
-        link.text = 'Top of Page';
-        link.className = 'hamburger-link '
+    // Create a link for each list item
+    const link = document.createElement("a");
+    link.href = `#root_div`;
+    link.text = 'Top of Page';
+    link.className = 'hamburger-link '
 
-        // Append the link to the list item
-        rootItem.appendChild(link);
+    // Append the link to the list item
+    rootItem.appendChild(link);
 
-        // Append the list item to the navigation list
-        navList.appendChild(rootItem);
+    // Append the list item to the navigation list
+    navList.appendChild(rootItem);
+
+    const subPaths = window.location.href.split("/").slice(4);
+
+    if (subPaths.includes("worlds")) {
+        const worldName = subPaths[subPaths.indexOf("worlds") + 1];
+        const worldLink = createLinkItem(`/worlds/${worldName}`, `Return to ${worldName}`, `${worldName}`);
+        navList.appendChild(worldLink);
+    }
+
+    if (subPaths.includes("burg")) {
+        const burgId = subPaths[subPaths.indexOf("burg") + 1];
+        const burgLink = createLinkItem(`/worlds/${worldName}/burg/${burgId}`, "Return to burg summary", `burg_${burgId}`);
+        navList.appendChild(burgLink);
+    }
+
+    if (subPaths.includes("marker")) {
+        const markerId = subPaths[subPaths.indexOf("marker") + 1];
+        const markerLink = createLinkItem(`/worlds/${worldName}/marker/${markerId}`, "Return to marker summary", `marker_${markerId}`);
+        navList.appendChild(markerLink);
+    }
 
     // Loop through all "burgSummary" elements
     for (const summaryElement of summaryElements) {
@@ -83,6 +114,9 @@ function createHamburgerMenu() {
         navList.appendChild(listItem);
     }
 
+    const logoutLink = createLinkItem("/logout", "Logout", "_self");
+    navList.appendChild(logoutLink);
+    
     // Append the navigation list to the floating panel
     panel.appendChild(navList);
 
@@ -123,7 +157,7 @@ function extractInnerText(event) {
 function createInteractiveElements() {
     const burg_summary_div = document.getElementsByClassName("burgSummary");
     const fragment = document.createDocumentFragment();
-    
+
     let top_button = document.createElement("div");
     top_button.title = "Navigate to Top of Page";
     top_button.className = "";
@@ -137,14 +171,14 @@ function createInteractiveElements() {
     menu_button.innerHTML = "<span class=\"material-symbols-outlined more_vert menu_button cmd\">more_vert</span>";
     menu_button.addEventListener('click', pop_menu);
     fragment.appendChild(menu_button);
-    
+
     for (let speakToMeNowIndex = 0; speakToMeNowIndex < burg_summary_div.length; speakToMeNowIndex++) {
-      burg_summary_div[speakToMeNowIndex].appendChild(fragment.cloneNode(true));
+        burg_summary_div[speakToMeNowIndex].appendChild(fragment.cloneNode(true));
     }
 
     const speak_me = document.getElementsByClassName("speakToMeNow");
     const fragment2 = document.createDocumentFragment(); // create a document fragment
-    
+
     let commander_buttons = document.createElement("div");
     commander_buttons.className = "commander_button";
 
@@ -174,12 +208,11 @@ function createInteractiveElements() {
     commander_buttons.appendChild(copyHTMLToClipBoardButton);
 
     fragment2.appendChild(commander_buttons); // append the elements to the fragment
-    
+
     for (let speakToMeNowIndex = 0; speakToMeNowIndex < speak_me.length; speakToMeNowIndex++) {
-      speak_me[speakToMeNowIndex].appendChild(fragment2.cloneNode(true)); // append the fragment to the DOM outside of the loop
+        speak_me[speakToMeNowIndex].appendChild(fragment2.cloneNode(true)); // append the fragment to the DOM outside of the loop
     }
-    
-    
+
 
     // Add event listeners to buttons
     document.addEventListener("click", function (event) {
@@ -226,28 +259,27 @@ function createInteractiveElements() {
 }
 
 function repeatedlyTrimString(input) {
-    const stringsToRemove = ['map','navigation', 'more_vert', 'text_to_speech', 'cancel', 'content_copy', 'html'];
-    
+    const stringsToRemove = ['map', 'navigation', 'more_vert', 'text_to_speech', 'cancel', 'content_copy', 'html'];
+
     let trimmedString = input.trim(); // trim leading/trailing whitespace
     let foundMatch = true;
-    
+
     while (foundMatch) {
         foundMatch = false;
-        
+
         for (let i = 0; i < stringsToRemove.length; i++) {
-        const stringToRemove = stringsToRemove[i];
-        
-        if (trimmedString.endsWith(stringToRemove)) {
-            trimmedString = trimmedString.slice(0, -stringToRemove.length).trim();
-            foundMatch = true;
-            break;
-        }
+            const stringToRemove = stringsToRemove[i];
+
+            if (trimmedString.endsWith(stringToRemove)) {
+                trimmedString = trimmedString.slice(0, -stringToRemove.length).trim();
+                foundMatch = true;
+                break;
+            }
         }
     }
-    
+
     return trimmedString;
 }
-      
 
 
 /*
@@ -284,7 +316,7 @@ function speakToMeNow(text) {
     console.log("Speaking?")
     stopSpeaking();
 
-   let splitText = text.split(".") // Hmmm
+    let splitText = text.split(".") // Hmmm
 
     for (let i = 0; i < splitText.length; i++) {
         const speechRequest = new SpeechSynthesisUtterance(text);
@@ -306,6 +338,5 @@ function speakToMeNow(text) {
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-
 
 
