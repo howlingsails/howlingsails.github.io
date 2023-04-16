@@ -75,27 +75,27 @@ function createHamburgerMenu() {
 
     if (subPaths.includes("world")) {
         const worldName = subPaths[subPaths.indexOf("world") + 1];
-        const worldLink = createLinkItem(`/world/${worldName}`, `Return to ${worldName}`, `${worldName}`);
+        const worldLink = createLinkItem(`world_vision/world/${worldName}`, `Return to ${worldName}`, `${worldName}`);
         navList.appendChild(worldLink);
     }
 
     if (subPaths.includes("burg")) {
         const worldName = subPaths[subPaths.indexOf("world") + 1];
         const burgId = subPaths[subPaths.indexOf("burg") + 1];
-        const burgLink = createLinkItem(`/world/${worldName}/burg/${burgId}`, "Return to burg summary", `burg_${burgId}`);
+        const burgLink = createLinkItem(`world_vision/world/${worldName}/burg/${burgId}`, "Return to burg summary", `burg_${burgId}`);
         navList.appendChild(burgLink);
     }
 
     if (subPaths.includes("marker")) {
         const worldName = subPaths[subPaths.indexOf("world") + 1];
         const markerId = subPaths[subPaths.indexOf("marker") + 1];
-        const markerLink = createLinkItem(`/world/${worldName}/marker/${markerId}`, "Return to marker summary", `marker_${markerId}`);
+        const markerLink = createLinkItem(`world_vision/world/${worldName}/marker/${markerId}`, "Return to marker summary", `marker_${markerId}`);
         navList.appendChild(markerLink);
     }
     if (subPaths.includes("state")) {
         const worldName = subPaths[subPaths.indexOf("world") + 1];
         const markerId = subPaths[subPaths.indexOf("marker") + 1];
-        const markerLink = createLinkItem(`/world/${worldName}/marker/${markerId}`, "Return to state summary", `marker_${markerId}`);
+        const markerLink = createLinkItem(`world_vision/world/${worldName}/marker/${markerId}`, "Return to state summary", `marker_${markerId}`);
         navList.appendChild(markerLink);
     }
 
