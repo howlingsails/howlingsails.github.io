@@ -95,7 +95,7 @@ function createHamburgerMenu() {
     if (subPaths.includes("state")) {
         const worldName = subPaths[subPaths.indexOf("world") + 1];
         const stateId = subPaths[subPaths.indexOf("state") + 1];
-        const markerLink = createLinkItem(`/world_vision/world/${worldName}/state/${stateId}`, "Return to state summary", `marker_${markerId}`);
+        const markerLink = createLinkItem(`/world_vision/world/${worldName}/state/${stateId}`, "Return to state summary", `state_${stateId}`);
         navList.appendChild(markerLink);
     }
 
