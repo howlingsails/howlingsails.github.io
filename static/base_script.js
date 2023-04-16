@@ -73,21 +73,29 @@ function createHamburgerMenu() {
 
     const subPaths = window.location.href.split("/").slice(4);
 
-    if (subPaths.includes("worlds")) {
-        const worldName = subPaths[subPaths.indexOf("worlds") + 1];
+    if (subPaths.includes("world")) {
+        const worldName = subPaths[subPaths.indexOf("world") + 1];
         const worldLink = createLinkItem(`/worlds/${worldName}`, `Return to ${worldName}`, `${worldName}`);
         navList.appendChild(worldLink);
     }
 
     if (subPaths.includes("burg")) {
+        const worldName = subPaths[subPaths.indexOf("world") + 1];
         const burgId = subPaths[subPaths.indexOf("burg") + 1];
         const burgLink = createLinkItem(`/worlds/${worldName}/burg/${burgId}`, "Return to burg summary", `burg_${burgId}`);
         navList.appendChild(burgLink);
     }
 
     if (subPaths.includes("marker")) {
+        const worldName = subPaths[subPaths.indexOf("world") + 1];
         const markerId = subPaths[subPaths.indexOf("marker") + 1];
         const markerLink = createLinkItem(`/worlds/${worldName}/marker/${markerId}`, "Return to marker summary", `marker_${markerId}`);
+        navList.appendChild(markerLink);
+    }
+    if (subPaths.includes("state")) {
+        const worldName = subPaths[subPaths.indexOf("world") + 1];
+        const markerId = subPaths[subPaths.indexOf("marker") + 1];
+        const markerLink = createLinkItem(`/worlds/${worldName}/marker/${markerId}`, "Return to state summary", `marker_${markerId}`);
         navList.appendChild(markerLink);
     }
 
@@ -116,7 +124,7 @@ function createHamburgerMenu() {
 
     const logoutLink = createLinkItem("/logout", "Logout", "_self");
     navList.appendChild(logoutLink);
-    
+
     // Append the navigation list to the floating panel
     panel.appendChild(navList);
 
