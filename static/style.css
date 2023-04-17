@@ -93,12 +93,11 @@ body {
 
 dialog {
     display: flex;
-    flex-direction: row;
     position: fixed;
     top: 5px;
-    left: 50%;
+    left: 7.5%;
     width: 85%;
-    max-height: calc(100vh - 50px);
+    max-height: calc(100vh - 30px);
     overflow-y: auto;
     margin-left: -42.5%;
     z-index: 200;
