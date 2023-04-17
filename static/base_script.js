@@ -44,7 +44,7 @@ function createHamburgerMenu() {
     // Add a click event listener to toggle the visibility of the floating panel
     menu.addEventListener("click", function () {
         const panel = menu.nextElementSibling;
-        panel.style.display = panel.style.display === "block" ? "none" : "block";
+        if (panel)  panel.style.display = panel.style.display === "block" ? "none" : "block";
     });
 
     // Create the floating panel
@@ -121,6 +121,12 @@ function createHamburgerMenu() {
         // Append the list item to the navigation list
         navList.appendChild(listItem);
     }
+    // create voice selector link
+    const voiceSelectorLink = document.createElement("li");
+    voiceSelectorLink.innerHTML = "<strong><u>Voice Options</u></strong>";
+    voiceSelectorLink.addEventListener("click", createVoiceSelector);
+    voiceSelectorLink.onclick = createVoiceSelector
+    navList.appendChild(voiceSelectorLink);
 
     const logoutLink = createLinkItem("/logout", "Logout", "_self");
     navList.appendChild(logoutLink);
@@ -165,13 +171,6 @@ function extractInnerText(event) {
 function createInteractiveElements() {
     const burg_summary_div = document.getElementsByClassName("burgSummary");
     const fragment = document.createDocumentFragment();
-
-    let top_button = document.createElement("div");
-    top_button.title = "Navigate to Top of Page";
-    top_button.className = "";
-    top_button.innerHTML = "<span class=\"material-symbols-outlined navigation top_button cmd\">navigation</span>";
-    top_button.addEventListener('click', jumpTop);
-    fragment.appendChild(top_button);
 
     let menu_button = document.createElement("div");
     menu_button.title = "Section Menu";
@@ -311,36 +310,108 @@ function stopSpeaking() {
     }
 }
 
-function speakToMeNow(text) {
+function speakToMeNow(text, voiceName) {
     if (!('speechSynthesis' in window)) {
         alert("You don't have speechSynthesis");
         return;
     }
-    debugger;
+    //debugger;
     let cnt = 0;
     speechSynthesis.getVoices().forEach(function (voice) {
         console.log(cnt++, voice.name, voice.default ? voice.default : '');
     });
-    console.log("Speaking?")
+    console.log("Speaking?");
     stopSpeaking();
 
-    let splitText = text.split(".") // Hmmm
+    let splitText = text.split(".");
 
     for (let i = 0; i < splitText.length; i++) {
-        const speechRequest = new SpeechSynthesisUtterance(text);
+        const speechRequest = new SpeechSynthesisUtterance(splitText[i]);
         let voices = window.speechSynthesis.getVoices();
-        //speechRequest.voice = voices[0]; //Nora Siri
+        const voiceName = localStorage.getItem("voice") || voices[0].name;
 
-        speechRequest.volume = 1.0; // From 0 to 1
-        speechRequest.rate = 1.0; // From 0.1 to 10
-        speechRequest.pitch = 1.0; // From 0 to 2
-        speechRequest.text = splitText[i]
+        const voice = voices.find(v => v.name === voiceName) || voices[0];
+        speechRequest.voice = voice;
+
+        speechRequest.volume = 1.0;
+        speechRequest.rate = 1.0;
+        speechRequest.pitch = 1.0;
+
         if (window.speechSynthesis.speaking) {
-            sleep(50)
+            sleep(50);
         }
         window.speechSynthesis.speak(speechRequest);
         sleep(1000);
     }
+}
+
+
+function createVoiceSelector() {
+    if (!('speechSynthesis' in window)) {
+        alert("You don't have speechSynthesis");
+        return;
+    }
+
+    const oldDialog = document.querySelector('.dialog.burgSummary');
+    if (oldDialog) {
+        oldDialog.remove();
+    }
+    const voices = window.speechSynthesis.getVoices();
+    const dialog = document.createElement("dialog");
+    dialog.classList.add("dialog", "burgSummary");
+
+    const voiceSelect = document.createElement("select");
+    voices.forEach(function (voice) {
+        const option = document.createElement("option");
+        option.value = voice.name;
+        option.textContent = voice.name;
+        voiceSelect.appendChild(option);
+    });
+    voiceSelect.value = localStorage.getItem("voice") || voices[0].name;
+    voiceSelect.addEventListener("change", function () {
+        localStorage.setItem("voice", voiceSelect.value);
+    });
+
+    const playButton = document.createElement("button");
+    playButton.textContent = "Sample Voice";
+    playButton.addEventListener("click", function () {
+        const voice = localStorage.getItem("voice") || voices[0].name;
+        speakToMeNow("Welcome to, Fantasy World Vision Generator!... Let your adventure begin!", voice);
+    });
+
+    const stopButton = document.createElement("button");
+    stopButton.textContent = "Stop Speaking";
+    stopButton.addEventListener("click", function () {
+        stopSpeaking();
+    });
+
+    const selectedVoice = document.createElement("p");
+    selectedVoice.textContent = `Selected Voice: ${voiceSelect.value}`;
+
+    const saveButton = document.createElement("button");
+    saveButton.textContent = "Save";
+    saveButton.addEventListener("click", function () {
+        localStorage.setItem("voice", voiceSelect.value);
+        dialog.close();
+        const oldDialog = document.querySelector('.dialog.burgSummary');
+        if (oldDialog) {
+            oldDialog.remove();
+        }
+    });
+
+    dialog.appendChild(voiceSelect);
+    dialog.appendChild(selectedVoice);
+    dialog.appendChild(playButton);
+    dialog.appendChild(stopButton);
+    dialog.appendChild(saveButton);
+    document.body.appendChild(dialog);
+
+    const voiceSelectorItem = createLinkItem("#", "Select Voice");
+    voiceSelectorItem.addEventListener("click", function (event) {
+        event.preventDefault();
+        dialog.showModal();
+    });
+    return voiceSelectorItem;
 }
 
 function sleep(ms) {
