@@ -93,6 +93,7 @@ body {
 
 dialog {
     display: flex;
+    flex-direction: row;
     position: fixed;
     top: 5px;
     left: 50%;
