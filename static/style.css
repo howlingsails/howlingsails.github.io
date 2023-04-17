@@ -91,6 +91,15 @@ body {
     margin-top: 1%;
 }
 
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 200;
+  }
+
+
 hr {
     color: var(--dark);
     line-height: 1.5em;
