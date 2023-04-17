@@ -94,15 +94,14 @@ body {
 dialog {
     display: flex;
     position: fixed;
-    width: 85%;
-    max-height: 80vh;
-    overflow-y: auto;
     top: 5px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    width: 85%;
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
+    margin-left: -42.5%;
     z-index: 200;
 }
-
 
 hr {
     color: var(--dark);
