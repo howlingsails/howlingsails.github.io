@@ -128,7 +128,7 @@ function createHamburgerMenu() {
     voiceSelectorLink.onclick = createVoiceSelector
     navList.appendChild(voiceSelectorLink);
 
-    const logoutLink = createLinkItem("https://howlingsails.com/world_vision", "Logout", "_self");
+    const logoutLink = createLinkItem("https://howlingsails.com/world_vision/logout", "Logout", "_self");
     navList.appendChild(logoutLink);
 
     // Append the navigation list to the floating panel
