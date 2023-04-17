@@ -94,6 +94,7 @@ body {
 dialog {
     display: flex;
     position: fixed;
+    flex-direction: row;
     top: 5px;
     left: 7.5%;
     width: 85%;
