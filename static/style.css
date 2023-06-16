@@ -65,43 +65,16 @@
     --text-link: #f0be9c;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-label {
-    flex: 1;
-}
-
-input[type="submit"] {
-    margin-left: 1em;
-}
-
 body {
-    background: var(--dark) url(/static/images/background/gravel.png);
+    background: var(--dark) url(https://howlingsails.com/static/images/background/gravel.png);
     color: var(--text);
     font-family: 'Nunito';
-    font-size: 1.5em;
-    font-spacing: 1.5em;
-    line-height: 1.5em;
+    font-size: 2em;
+    font-spacing: 2em;
+    line-height: 1.3em;
     margin-left: 2%;
     margin-right: 2%;
     margin-top: 1%;
-}
-
-dialog {
-    display: flex;
-    position: fixed;
-    flex-direction: row;
-    top: 5px;
-    left: 7.5%;
-    width: 85%;
-    max-height: calc(100vh - 30px);
-    overflow-y: auto;
-    margin-left: -42.5%;
-    z-index: 200;
 }
 
 hr {
@@ -135,17 +108,20 @@ a {
 
 .hamburger-menu {
     background-color: var(--dark);
-    border: 2px solid;
+    border: 4px solid;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    height: 24px;
+    height: 28px;
     justify-content: space-between;
     position: fixed;
     left: 10px;
     top: 5px;
-    width: 25px;
+    padding: 1px;
+    width: 28px;
     z-index: 250;
+    align-items: center;
+    vertical-align: middle;
 
 }
 
@@ -157,16 +133,32 @@ a {
     width: 40px;
 }
 
+.hamburger-link {
+    background: var(--back) url(https://howlingsails.com/static/images/background/med-green-felt.png);
+    border: 3px solid var(--warn);
+    border-radius: 0.5em;
+    width: 92%;
+    padding: 15px;
+    cursor: pointer;
+}
+
 .hamburger-panel {
-    background-color: var(--dark);
+    background: var(--dark) url(https://howlingsails.com/static/images/background/cardboard.png);
     display: none;
-    padding: 20px;
+    padding: 10px;
     position: fixed;
     left: 10px;
     top: 35px;
     z-index: 300;
-    max-height: 50vh;
-    overflow-y: scroll;
+    min-width: 80vw;
+    min-height: 80vh;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-x: auto;
+    overflow-y: auto;
+    border: solid 0.2em;
+    border-radius: 0.5em;
+
 }
 
 ul {
@@ -175,9 +167,6 @@ ul {
     padding: 0;
 }
 
-li {
-    margin-bottom: 10px;
-}
 
 * {
     box-sizing: inherit;
@@ -204,7 +193,7 @@ li {
 }
 
 .state_title {
-    font-size: 2em;
+    font-size: 3em;
     text-align: center;
 }
 
@@ -222,7 +211,7 @@ li {
 }
 
 .grid_item {
-    background: var(--back) url(/static/images/background/black-orchid.png);
+    background: var(--back) url(https://howlingsails.com/static/images/background/black-orchid.png);
     border: solid var(--warn);
     border-radius: 15px;
     box-shadow: 4px 4px var(--dark);
@@ -250,8 +239,7 @@ li {
 
 .world_states {
     display: grid;
-    grid-template-columns: 100%;
-    ;
+    grid-template-columns: 100%;;
 
 }
 
@@ -276,7 +264,7 @@ li {
 }
 
 .green_felt_bb_r_n_p {
-    background: var(--back) url(/static/images/background/med-green-felt.png);
+    background: var(--back) url(https://howlingsails.com/static/images/background/med-green-felt.png);
     border: 2px solid var(--warn);
     border-radius: 0.5em;
     margin: 0.7em;
@@ -300,7 +288,7 @@ li {
 
 .command_button {
     align-items: center;
-    background: var(--dark) url(/static/images/background/black-orchid.png);
+    background: var(--dark) url(https://howlingsails.com/static/images/background/black-orchid.png);
     border: solid 0.1em var(--warn);
     border-radius: 0.5em;
     font-size: 0.5em;
@@ -346,22 +334,24 @@ li {
     cursor: pointer;
     display: flex;
     font-size: 0.3em;
-    font-weight: 50;
-    line-height: 0.6em;
-    marging-left: 0.3em;
+    font-weight: 250;
+    line-height: 0.8em;
     position: absolute;
     right: 0em;
-    top: 0em;
-    z-index: 100;
+    top: -20px;
+    z-index: 70;
+}
+
+.buttons {
+    margin: 5px;
 }
 
 .cmd {
-    background: var(--dark) url(/static/images/background/black-orchid.png);
+    background: var(--dark) url(https://howlingsails.com/static/images/background/black-orchid.png);
     border: solid 0.05em var(--high);
     border-radius: 0.25em;
-    font-size: 0.05em;
-    margin: 0em;
-    padding: 0.05em;
+    vertical-align: middle;
+    align-items: center;
 }
 
 .ad_grid {
@@ -400,27 +390,13 @@ li {
 
 }
 
-.burgHeader {
-    background: var(--dark) url(/static/images/background/black-orchid.png);
-    border: solid 0.1em var(--warn);
-    border-radius: 0.5em;
-    cursor: pointer;
-    display: block;
-    letter-spacing: 0.2em;
-
-    margin: 0.1em;
-    padding: 0.2em;
-    text-shadow: -2px 2px var(--back);
-}
-
-
 .burgSummary {
     background: var(--back);
     border: 2px solid var(--warn);
     border-radius: 0.5em;
     line-height: 1.2em;
-    margin: 0.2em 0.2em;
-    padding: 1em 1em 1em;
+    margin: 0.1em 0.2em;
+    padding: 0.8em 1.2em 1.2em;
 }
 
 .cardContainer {
@@ -466,10 +442,32 @@ li {
     text-align: center;
 }
 
+.burgHeader {
+    background: var(--dark) url(https://howlingsails.com/static/images/background/black-orchid.png);
+    border: solid 0.1em var(--warn);
+    border-radius: 0.5em;
+    cursor: pointer;
+    display: block;
+    letter-spacing: 0.02em;
+
+    margin: 0.2em;
+    padding: 0.5em;
+    text-shadow: -2px 2px var(--back);
+}
 
 small {
     font-size: 0.5em;
     letter-spacing: 0em;
+}
+
+.voice_option_dialog {
+    background: var(--dark) url(https://howlingsails.com/static/images/background/cardboard.png);
+    border: solid 3px var(--warn);
+    position: fixed;
+    font-size: 1em;
+    top: 50px;
+    left: 50px;
+    z-index: 200;
 }
 
 .districtHeader {
@@ -482,7 +480,7 @@ small {
 }
 
 .districtIndustry {
-    background: var(--back) url(/static/images/background/med-green-felt.png);
+    background: var(--back) url(https://howlingsails.com/static/images/background/med-green-felt.png);
 
     border: solid 3px var(--warn);
     border-radius: 15px;
@@ -500,7 +498,7 @@ small {
 }
 
 .districtSummary {
-    background: var(--dark) url(/static/images/background/med-green-felt.png);
+    background: var(--dark) url(https://howlingsails.com/static/images/background/med-green-felt.png);
     border: solid 2px var(--warn);
     border-radius: 25px;
     margin: 15px;
@@ -508,7 +506,7 @@ small {
 
 .header_icons {
     align-content: space-evenly;
-    background: var(--dark) url(/static/images/background/black-orchid.png);
+    background: var(--dark) url(https://howlingsails.com/static/images/background/black-orchid.png);
     border: solid 0.1em var(--warn);
     border-radius: 0.5em;
     display: flex;
@@ -523,7 +521,9 @@ small {
 /*****************
  * iframe, flex stretch 100 by 100
  *****************/
-.iframe-border_panel {}
+.iframe-border_panel {
+
+}
 
 .iframe_size_out {
     border-radius: 10px;
@@ -539,7 +539,7 @@ small {
  *****************/
 .industries {
     align-items: stretch;
-    background: var(--back) url(/static/images/background/black-orchid.png);
+    background: var(--back) url(https://howlingsails.com/static/images/background/black-orchid.png);
     border: solid 2px;
     border-radius: 15px;
     display: block;
@@ -549,7 +549,7 @@ small {
 }
 
 .section_group {
-    background: var(--dark) url(/static/images/background/french-stucco.png);
+    background: var(--dark) url(https://howlingsails.com/static/images/background/french-stucco.png);
     border: solid 0.2em;
     border-radius: 0.5em;
     margin: 0.3em;
@@ -558,7 +558,7 @@ small {
 }
 
 .sub_section_group {
-    background: var(--dark) url(/static/images/background/church.png);
+    background: var(--dark) url(https://howlingsails.com/static/images/background/church.png);
     border: solid 0.2em;
     border-radius: 0.5em;
     margin: 0.3em;
@@ -610,11 +610,11 @@ small {
 }
 
 .material-symbols-outlined {
-    font-size: 12px;
+    font-size: 28px;
     font-variation-settings: 'FILL' 0,
-        'wght' 500,
-        'GRAD' 0,
-        'opsz' 100;
+    'wght' 500,
+    'GRAD' 0,
+    'opsz' 100;
 }
 
 .resourceSummary {
@@ -633,7 +633,7 @@ small {
  * workers
  *****************/
 .worker_details {
-    background: var(--back) url(/static/images/background/cross-scratches.png);
+    background: var(--back) url(https://howlingsails.com/static/images/background/cross-scratches.png);
     border: 2px var(--warn);
     border-radius: 25px;
     color: var(--text);
@@ -656,7 +656,7 @@ small {
     padding: 3px;
 }
 
-.worker_summary>ul {
+.worker_summary > ul {
     padding-left: 14px;
 }
 
@@ -670,70 +670,57 @@ small {
 }
 
 .spiritually_summary {
-    background: var(--back) url(/static/images/background/green-forest.png);
+    background: var(--back) url(https://howlingsails.com/static/images/background/green-forest.png);
     border-radius: 25px;
     cursor: pointer;
     margin: 10px;
     padding: 15px;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
 
     .body {
-        font-size: 1.2em;
-        . . .
+        font-size: 1.5em;
+    . . .
     }
 
 }
 
-@media (max-width: 1100px) {
-    body {
-        font-size: 1em;
-        . . .
+@media (max-width: 800px) {
+    .body {
+        font-size: 1.5em;
+    . . .
     }
 
     .industries {
         display: block;
         grid-template-columns: 100%;
         scroll-behavior: auto;
-        . . .
+    . . .
     }
 
     .section_group {
         margin: 0.1em;
         padding: 0.1em;
-        . . .
+    . . .
     }
 
     .subsection_group {
         margin: 0.1em;
         padding: 0.1em;
-        . . .
+    . . .
     }
 
     .resources_group {
         grid-template-columns: 100%;
-        . . .
+    . . .
     }
 
     .grid_panel_2 {
         grid-template-columns: 100%;
-        . . .
+    . . .
     }
 
-    .commander_button {
-
-        cursor: pointer;
-        display: flex;
-        font-size: 0.1em;
-        font-weight: 50;
-        line-height: 0.6em;
-        marging-left: 0.3em;
-        position: absolute;
-        right: 65em;
-        top: -5em;
-        width: 1em;
-        z-index: 100;
-    }
 
 }
+
