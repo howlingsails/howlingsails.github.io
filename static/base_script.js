@@ -175,7 +175,7 @@ function createInteractiveElements() {
     }
 
     // Add event listener to parent element for event delegation
-    document.querySelector('#root_div').addEventListener("click", function (event) {
+    document.querySelector('body').addEventListener("click", function (event) {
         const target = event.target;
         if (target.classList.contains("navigation")) {
             return jumpTop();
