@@ -628,7 +628,7 @@ small {
 }
 
 .material-symbols-outlined {
-    background: var(--dark) url(https://howlingsails.com/static/images/background/dark-gold-fabric);
+    background: var(--dark) url(https://howlingsails.com/static/images/background/dark-gold-fabric.png);
     border: solid 0.05em var(--text);
 
 
