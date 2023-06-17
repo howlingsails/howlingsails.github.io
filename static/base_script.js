@@ -36,6 +36,7 @@ function createHamburgerMenu() {
     panel.classList.add("hamburger-panel");
     panel.style.display = "none";
 
+
     const navList = document.createElement("ul");
     if (!window.location.href.startsWith("https://howlingsails.com/world_vision/")) {
         const pateiaBlog = createLinkItem("https://pateia.howlingsails.com/", "World of Pateia Stories", "Pateia_Blog");
@@ -44,6 +45,7 @@ function createHamburgerMenu() {
         navList.appendChild(fwvgLink);
     }
 
+
     const rootItem = document.createElement("li");
     const rootLink = document.createElement("a");
     rootLink.href = `#root_div`;
@@ -51,6 +53,13 @@ function createHamburgerMenu() {
     rootItem.classList.add('hamburger-link');
     rootItem.appendChild(rootLink);
     navList.appendChild(rootItem);
+
+    // Add the new list item for copying the HTML document
+    const copyHTMLTextLink = createLinkItem("#", "Copy HTML as Plain Text", "_self");
+    copyHTMLTextLink.addEventListener("click", copyHTMLAsPlainText);
+    copyHTMLTextLink.classList.add("hamburger-link");
+    navList.appendChild(copyHTMLTextLink);
+
 
     const subPaths = window.location.href.split("/").slice(4);
 
@@ -82,6 +91,7 @@ function createHamburgerMenu() {
     voiceSelectorLink.onclick = createVoiceSelector;
     voiceSelectorLink.classList.add('hamburger-link');
     navList.appendChild(voiceSelectorLink);
+
 
     if (window.location.href.startsWith("https://howlingsails.com/world_vision/")) {
         const logoutLink = createLinkItem("/logout", "Logout", "_self");
@@ -115,17 +125,48 @@ function createHamburgerMenu() {
     document.addEventListener('click', handleClick);
 }
 
+function copyHTMLAsPlainText(event) {
+    const sectionGroups = document.getElementsByClassName("section_group");
+    let html_to_copy = "";
+
+    for (let i = 0; i < sectionGroups.length; i++) {
+        html_to_copy += sectionGroups[i].innerText + "\n";
+    }
+
+
+    html_to_copy = html_to_copy.replace(/\s\s+/g, " "); // Replace multiple consecutive spaces with a single space
+    html_to_copy = html_to_copy.replace(/navigation/g, "");
+    html_to_copy = html_to_copy.replace(/more_vert/g, "");
+    html_to_copy = html_to_copy.replace(/text_to_speech/g, "");
+    html_to_copy = html_to_copy.replace(/-/g, "");
+    html_to_copy = html_to_copy.replace(/content_copy/g, "");
+    html_to_copy = html_to_copy.replace(/cancel/g, "");
+    html_to_copy = html_to_copy.replace(/html/g, "");
+    html_to_copy = html_to_copy.replace(/\n\n/g, "\n");
+    html_to_copy = html_to_copy.replace(/\n\n/g, "\n");
+    html_to_copy = html_to_copy.replace(/\n\n/g, "\n");
+    html_to_copy = html_to_copy.trim(); // Trim leading/trailing whitespace
+
+    console.log(html_to_copy);
+    navigator.clipboard.writeText(html_to_copy);
+}
+
 function extractInnerText(event) {
     const speak_me_target = event.target.closest(".speakToMeNow");
-    let text_to_say = speak_me_target.innerText;
-    return text_to_say
-        .replace("navigation", "")
-        .replace("more_vert", "")
-        .replace("text_to_speech", "")
-        .replace("-", "")
-        .replace("content_copy", "")
-        .replace("cancel", "")
-        .replace("html", "");
+    let html_to_copy = speak_me_target.innerText;
+    html_to_copy = html_to_copy.replace(/\s\s+/g, " "); // Replace multiple consecutive spaces with a single space
+    html_to_copy = html_to_copy.replace(/navigation/g, "");
+    html_to_copy = html_to_copy.replace(/more_vert/g, "");
+    html_to_copy = html_to_copy.replace(/text_to_speech/g, "");
+    html_to_copy = html_to_copy.replace(/-/g, "");
+    html_to_copy = html_to_copy.replace(/content_copy/g, "");
+    html_to_copy = html_to_copy.replace(/cancel/g, "");
+    html_to_copy = html_to_copy.replace(/html/g, "");
+    html_to_copy = html_to_copy.replace(/\n\n/g, "\n");
+    html_to_copy = html_to_copy.replace(/\n\n/g, "\n");
+    html_to_copy = html_to_copy.replace(/\n\n/g, "\n");
+    html_to_copy = html_to_copy.trim(); // Trim leading/trailing whitespace
+    return html_to_copy
 }
 
 // Add Elements for interactiveElements Called "SpeakToMe"
@@ -177,9 +218,7 @@ function createInteractiveElements() {
     // Add event listener to parent element for event delegation
     document.querySelector('body').addEventListener("click", function (event) {
         const target = event.target;
-        if (target.classList.contains("navigation")) {
-            return jumpTop();
-        } else if (target.classList.contains("text_to_speech")) {
+        if (target.classList.contains("text_to_speech")) {
             let text_to_say = repeatedlyTrimString(extractInnerText(event));
             console.log(text_to_say);
             speakToMeNow(text_to_say);
@@ -202,11 +241,7 @@ function createInteractiveElements() {
                 console.log(html_to_copy);
             }
 
-            const generatedHtml =
-                "<div class=\"source\"><a href=\"" + window.location.href + "\" target=\"_blank\">source</a>" +
-                "</div>\n" +
-                "<div class='speakToMeNow'>\n\t\t" + html_to_copy + "\n" +
-                "</div>\n";
+            const generatedHtml = "<div class=\"source\"><a href=\"" + window.location.href + "\" target=\"_blank\">source</a>" + "</div>\n" + "<div class='speakToMeNow'>\n\t\t" + html_to_copy + "\n" + "</div>\n";
             navigator.clipboard.writeText(generatedHtml);
         }
     });
@@ -264,7 +299,7 @@ function createVoiceSelector() {
     }
 
     const dialog = document.createElement("dialog");
-    dialog.classList.add("dialog", "burgSummary","voice_option_dialog");
+    dialog.classList.add("dialog", "burgSummary", "voice_option_dialog");
     dialog.style.display = "block";
 
     const voiceSelect = document.createElement("select");
@@ -354,3 +389,4 @@ function repeatedlyTrimString(input) {
 
     return trimmedString;
 }
+
