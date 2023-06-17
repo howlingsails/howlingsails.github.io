@@ -69,7 +69,7 @@ body {
     background: var(--dark) url(https://howlingsails.com/static/images/background/gravel.png);
     color: var(--text);
     font-family: 'Nunito';
-    font-size: 2em;
+    font-size: 1.5em;
     font-spacing: 2em;
     line-height: 1.3em;
     margin-left: 2%;
@@ -687,8 +687,20 @@ small {
 }
 
 @media (max-width: 800px) {
+    .h1 {
+        font-size: 1.0em
+    }
     .body {
-        font-size: 1.5em;
+        font-size: 0.6em;
+    }
+    .burgSummary {
+        font-size: 0.6em;
+        margin-top: 15px;
+    }
+    .buttons {
+        top: -3px
+    }
+
     . . .
     }
 
@@ -723,4 +735,5 @@ small {
 
 
 }
+
 
