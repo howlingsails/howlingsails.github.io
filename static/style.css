@@ -2,6 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Aladin&family=Bad+Script&family=Comfortaa:wght@500&family=Gloria+Hallelujah&family=Great+Vibes&family=Lobster+Two&family=Marck+Script&family=Marhey:wght@300;500;700&family=Montez&family=Noto+Sans+Symbols+2&family=Noto+Sans+Symbols:wght@100&family=Nunito:wght@200;300;400;600&family=Roboto+Slab:wght@300;600;900&family=Sono:wght@400;500;600&family=Uncial+Antiqua&display=swap');
 
+@font-face {
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    src: url(https://example.com/material-symbols.woff) format('woff');
+}
+
 /*
 @import url('https://fonts.googleapis.com/css2
 ?family=Aladin
@@ -69,8 +75,8 @@ body {
     background: var(--dark) url(https://howlingsails.com/static/images/background/gravel.png);
     color: var(--text);
     font-family: 'Nunito';
-    font-size: 1.5em;
-    font-spacing: 2em;
+    font-size: 3vh;
+    font-spacing: 3vh;
     line-height: 1.3em;
     margin-left: 2%;
     margin-right: 2%;
@@ -108,7 +114,6 @@ a {
 
 .hamburger-menu {
     background-color: var(--dark);
-    border: 4px solid;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -137,9 +142,10 @@ a {
     background: var(--back) url(https://howlingsails.com/static/images/background/med-green-felt.png);
     border: 3px solid var(--warn);
     border-radius: 0.5em;
-    width: 92%;
+    margin: 1vh;
     padding: 15px;
     cursor: pointer;
+    text-align: center;
 }
 
 .hamburger-panel {
@@ -150,9 +156,9 @@ a {
     left: 10px;
     top: 35px;
     z-index: 300;
-    min-width: 80vw;
+    min-width: 80vh;
     min-height: 80vh;
-    max-width: 90vw;
+    max-width: 90vh;
     max-height: 90vh;
     overflow-x: auto;
     overflow-y: auto;
@@ -193,13 +199,13 @@ ul {
 }
 
 .state_title {
-    font-size: 3em;
+    font-size: 10vh;
     text-align: center;
 }
 
 .burgs {
     display: block;
-    font-size: 0.7em;
+    font-size: 7vh;
     padding: 0.5em;
 }
 
@@ -215,7 +221,7 @@ ul {
     border: solid var(--warn);
     border-radius: 15px;
     box-shadow: 4px 4px var(--dark);
-    font-size: 0.9em;
+    font-size: 9vh;
     margin: 5px;
     padding: 10px;
 }
@@ -291,7 +297,6 @@ ul {
     background: var(--dark) url(https://howlingsails.com/static/images/background/black-orchid.png);
     border: solid 0.1em var(--warn);
     border-radius: 0.5em;
-    font-size: 0.5em;
     height: 2.5em;
     marging-left: 0.5em;
     position: absolute;
@@ -304,7 +309,7 @@ ul {
 .top_button {
     cursor: pointer;
     display: flex;
-    font-size: 0.3em;
+    font-size: 3vh;
     font-weight: 50;
     left: -0.5em;
     line-height: 0.6em;
@@ -318,7 +323,7 @@ ul {
 .menu_button {
     cursor: pointer;
     display: flex;
-    font-size: 12px;
+    font-size: 12vh;
     font-weight: 50;
     left: -0.5em;
     line-height: 0.6em;
@@ -333,7 +338,6 @@ ul {
 
     cursor: pointer;
     display: flex;
-    font-size: 0.3em;
     font-weight: 250;
     line-height: 0.8em;
     position: absolute;
@@ -343,15 +347,29 @@ ul {
 }
 
 .buttons {
-    margin: 5px;
+    margin: .2vh;
+}
+
+.text_to_speech {
+    font-size: 1.5vh;
+}
+
+.cancel {
+    font-size: 1.5vh;
+}
+
+.copy_text_button {
+    font-size: 1.5vh;
+}
+
+. copy_html_button {
+    font-size: 1.5vh;
 }
 
 .cmd {
-    background: var(--dark) url(https://howlingsails.com/static/images/background/black-orchid.png);
-    border: solid 0.05em var(--high);
-    border-radius: 0.25em;
     vertical-align: middle;
     align-items: center;
+    margin-right: 1vh;
 }
 
 .ad_grid {
@@ -364,7 +382,7 @@ ul {
 }
 
 .ad_youtube {
-    font-size: 0.5em;
+    font-size: 5vh;
     line-height: 1.0em;
     padding: 0.5em;
     vertical-align: middle;
@@ -380,7 +398,7 @@ ul {
 .ad_item {
     align-items: center;
     display: flex;
-    font-size: 0.5em;
+    font-size: 10vh;
     height: 315px;
     justify-content: center;
     line-height: 1.0em;
@@ -412,7 +430,7 @@ ul {
     border: 2px solid var(--warn);
     border-radius: 0.8em;
     flex-grow: 3;
-    font-size: 0.8em;
+    font-size: 12vh;
     line-height: 1.2em;
     margin: auto;
     padding: 0.3em;
@@ -425,7 +443,7 @@ ul {
     border: 2px solid var(--warn);
     border-radius: 0.8em;
     flex-grow: 3;
-    font-size: 1em;
+    font-size: 10vh;
     line-height: 1.2em;
     margin: auto;
     padding: 0.3em;
@@ -436,7 +454,7 @@ ul {
     background: var(--back);
     border: 2px solid var(--warn);
     border-radius: 0.8em;
-    font-size: 0.8em;
+    font-size: 10vh;
     line-height: 2em;
     margin: 0.2em;
     text-align: center;
@@ -445,18 +463,19 @@ ul {
 .burgHeader {
     background: var(--dark) url(https://howlingsails.com/static/images/background/black-orchid.png);
     border: solid 0.1em var(--warn);
-    border-radius: 0.5em;
+    border-radius: 0.7em;
     cursor: pointer;
     display: block;
     letter-spacing: 0.02em;
 
     margin: 0.2em;
+    margin-left: 0.5em;
     padding: 0.5em;
     text-shadow: -2px 2px var(--back);
 }
 
 small {
-    font-size: 0.5em;
+    font-size: 7 vm;
     letter-spacing: 0em;
 }
 
@@ -464,7 +483,7 @@ small {
     background: var(--dark) url(https://howlingsails.com/static/images/background/cardboard.png);
     border: solid 3px var(--warn);
     position: fixed;
-    font-size: 1em;
+    font-size: 10vh;
     top: 50px;
     left: 50px;
     z-index: 200;
@@ -531,7 +550,7 @@ small {
     flex-flow: column;
     flex-grow: 10;
     height: 50vh;
-    width: 50vw;
+    width: 50vh;
 }
 
 /*****************
@@ -597,8 +616,8 @@ small {
     grid-auto-rows: auto;
     grid-gap: 1rem;
     grid-template-columns: repeat(4, 1fr);
-    margin: 5px;
-    padding: 5px;
+    margin: .2vh;
+    padding: .5vh;
 
 }
 
@@ -609,12 +628,26 @@ small {
     padding: 5px;
 }
 
+.root_div {
+    margin: 1vh;
+}
+
 .material-symbols-outlined {
-    font-size: 28px;
-    font-variation-settings: 'FILL' 0,
-    'wght' 500,
-    'GRAD' 0,
-    'opsz' 100;
+    background: var(--dark) url(https://howlingsails.com/static/images/background/dark-gold-fabric);
+    border: solid 0.05em var(--text);
+
+
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 3vh; /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
 }
 
 .resourceSummary {
@@ -677,61 +710,44 @@ small {
     padding: 15px;
 }
 
-@media (max-width: 1200px) {
 
-    .body {
-        font-size: 1.5em;
-    . . .
-    }
-
-}
 
 @media (max-width: 800px) {
-    .h1 {
-        font-size: 1.0em
-    }
-    .body {
-        font-size: 0.6em;
-    }
-    .burgSummary {
-        font-size: 0.6em;
-        margin-top: 15px;
-    }
     .buttons {
-        top: -3px
+        top: -3px;
     }
 
     . . .
-    }
+}
 
-    .industries {
-        display: block;
-        grid-template-columns: 100%;
-        scroll-behavior: auto;
-    . . .
-    }
+.industries {
+    display: block;
+    grid-template-columns: 100%;
+    scroll-behavior: auto;
+. . .
+}
 
-    .section_group {
-        margin: 0.1em;
-        padding: 0.1em;
-    . . .
-    }
+.section_group {
+    margin: 0.1em;
+    padding: 0.1em;
+. . .
+}
 
-    .subsection_group {
-        margin: 0.1em;
-        padding: 0.1em;
-    . . .
-    }
+.subsection_group {
+    margin: 0.1em;
+    padding: 0.1em;
+. . .
+}
 
-    .resources_group {
-        grid-template-columns: 100%;
-    . . .
-    }
+.resources_group {
+    grid-template-columns: 100%;
+. . .
+}
 
-    .grid_panel_2 {
-        grid-template-columns: 100%;
-    . . .
-    }
+.grid_panel_2 {
+    grid-template-columns: 100%;
+. . .
+}
 
 
 }

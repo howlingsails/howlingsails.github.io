@@ -55,7 +55,7 @@ function createHamburgerMenu() {
     navList.appendChild(rootItem);
 
     // Add the new list item for copying the HTML document
-    const copyHTMLTextLink = createLinkItem("#", "Copy HTML as Plain Text", "_self");
+    const copyHTMLTextLink = createLinkItem("#", "Copy Page Text", "_self");
     copyHTMLTextLink.addEventListener("click", copyHTMLAsPlainText);
     copyHTMLTextLink.classList.add("hamburger-link");
     navList.appendChild(copyHTMLTextLink);
@@ -187,22 +187,22 @@ function createInteractiveElements() {
     let speakToMeButton = document.createElement("div");
     speakToMeButton.className = "speak_button cmd";
     speakToMeButton.title = "Speak Text";
-    speakToMeButton.innerHTML = "<div class='buttons'><span class=\"material-symbols-outlined text_to_speech\">text_to_speech</span></div>";
+    speakToMeButton.innerHTML = "<div class='buttons'><span class=\"text_to_speech material-symbols-outlined\">text_to_speech</span></div>";
 
     let noSpeakToMeButton = document.createElement("div");
     noSpeakToMeButton.className = "cancel_speak_button cmd";
     noSpeakToMeButton.title = "Stop Speaking";
-    noSpeakToMeButton.innerHTML = "<div class='buttons'><span class=\"material-symbols-outlined cancel\">cancel</span></div>";
+    noSpeakToMeButton.innerHTML = "<div class='buttons'><span class=\"cancel material-symbols-outlined\">cancel</span></div>";
 
     let copyTextClipboardButton = document.createElement("div");
     copyTextClipboardButton.className = "copy_text_button cmd";
     copyTextClipboardButton.title = "Copy Text to Clipboard";
-    copyTextClipboardButton.innerHTML = "<div class='buttons'><span class=\"material-symbols-outlined content_copy\">content_copy</span></div>";
+    copyTextClipboardButton.innerHTML = "<div class='buttons'><span class=\"content_copy material-symbols-outlined\">content_copy</span></div>";
 
     let copyHTMLToClipBoardButton = document.createElement("div");
     copyHTMLToClipBoardButton.className = "copy_html_button cmd";
     copyHTMLToClipBoardButton.title = "Copy HTML to clipboard";
-    copyHTMLToClipBoardButton.innerHTML = "<div class='buttons'><span class=\"material-symbols-outlined html\">html</span></div>";
+    copyHTMLToClipBoardButton.innerHTML = "<div class='buttons'><span class=\"html material-symbols-outlined\">html</span></div>";
 
     commander_buttons.appendChild(speakToMeButton);
     commander_buttons.appendChild(noSpeakToMeButton);
