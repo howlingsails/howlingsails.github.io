@@ -425,7 +425,7 @@ ul {
     border: 2px solid var(--warn);
     border-radius: 0.8em;
     flex-grow: 3;
-    font-size: 12vh;
+    font-size: 3vh;
     line-height: 1.2em;
     margin: auto;
     padding: 0.3em;
@@ -449,7 +449,7 @@ ul {
     background: var(--back);
     border: 2px solid var(--warn);
     border-radius: 0.8em;
-    font-size: 10vh;
+    font-size: 3vh;
     line-height: 2em;
     margin: 0.2em;
     text-align: center;
@@ -470,7 +470,7 @@ ul {
 }
 
 small {
-    font-size: 7 vm;
+    font-size: 1vh;
     letter-spacing: 0em;
 }
 
@@ -478,7 +478,7 @@ small {
     background: var(--dark) url(https://howlingsails.com/static/images/background/cardboard.png);
     border: solid 3px var(--warn);
     position: fixed;
-    font-size: 10vh;
+    font-size: 3vh;
     top: 50px;
     left: 50px;
     z-index: 200;
@@ -628,7 +628,7 @@ small {
 }
 
 .material-symbols-outlined {
-    background: var(--dark) url(https://howlingsails.com/static/images/background/dark-gold-fabric.png);
+    background: var(--dark) url(https://howlingsails.com/static/images/background/dark-gold-fabric);
     border: solid 0.05em var(--text);
 
 
@@ -711,7 +711,6 @@ small {
     .buttons {
         top: -3px;
     }
-
     . . .
 }
 
@@ -743,8 +742,4 @@ small {
     grid-template-columns: 100%;
 . . .
 }
-
-
-}
-
 
