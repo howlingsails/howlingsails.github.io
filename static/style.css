@@ -377,7 +377,7 @@ ul {
 }
 
 .ad_youtube {
-    font-size: 5vh;
+    font-size: 3vh;
     line-height: 1.0em;
     padding: 0.5em;
     vertical-align: middle;
@@ -393,7 +393,7 @@ ul {
 .ad_item {
     align-items: center;
     display: flex;
-    font-size: 10vh;
+    font-size: 3vh;
     height: 315px;
     justify-content: center;
     line-height: 1.0em;
