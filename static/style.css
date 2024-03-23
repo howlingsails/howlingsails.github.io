@@ -70,8 +70,8 @@ body {
     background: var(--dark) url(https://howlingsails.com/static/images/background/gravel.png);
     color: var(--text);
     font-family: 'Nunito';
-    font-size: 3vh;
-    font-spacing: 3vh;
+    font-size: 1.5vh;
+    font-spacing: 1.6vh;
     line-height: 1.3em;
     margin-left: 2%;
     margin-right: 2%;
@@ -407,11 +407,10 @@ ul {
     background: var(--back);
     border: 2px solid var(--warn);
     border-radius: 0.5em;
-    line-height: 1.2em;
-    margin: 0.1em 0.2em;
-    padding: 0.8em 1.2em 1.2em;
+    line-height: 3vh;
+    margin: 0.2em 0.2em;
+    padding: 0.8em 0.3em 0.5em;
 }
-
 .cardContainer {
     /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
     display: flex;
@@ -566,9 +565,8 @@ small {
     background: var(--dark) url(https://howlingsails.com/static/images/background/french-stucco.png);
     border: solid 0.2em;
     border-radius: 0.5em;
-    margin: 0.3em;
-    margin-bottom: 1em;
-    padding: 0.5em;
+    margin: -0.9em 0.1em 1em;
+    padding: 0.5em 0.5em 1.05em;
 }
 
 .sub_section_group {
