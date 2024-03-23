@@ -565,7 +565,7 @@ small {
     background: var(--dark) url(https://howlingsails.com/static/images/background/french-stucco.png);
     border: solid 0.2em;
     border-radius: 0.5em;
-    margin: -0.9em 0.1em 1em;
+    margin: 0.2em 0.1em 1em;
     padding: 0.5em 0.5em 1.05em;
 }
 
@@ -720,8 +720,9 @@ small {
 }
 
 .section_group {
-    margin: 0.1em;
-    padding: 0.1em;
+    margin: 0.2em 0.1em 1em;
+    padding: 0.5em 0.5em 1.05em;
+
 . . .
 }
 
