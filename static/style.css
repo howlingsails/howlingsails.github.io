@@ -151,9 +151,9 @@ a {
     left: 10px;
     top: 35px;
     z-index: 300;
-    min-width: 80vh;
-    min-height: 80vh;
-    max-width: 90vh;
+    min-width: 42vw;
+    min-height: 20vh;
+    max-width: 90vw;
     max-height: 90vh;
     overflow-x: auto;
     overflow-y: auto;
