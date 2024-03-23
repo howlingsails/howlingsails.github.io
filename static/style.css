@@ -424,7 +424,7 @@ ul {
     border: 2px solid var(--warn);
     border-radius: 0.8em;
     flex-grow: 3;
-    font-size: 3vh;
+    font-size: 1.2vh;
     line-height: 1.2em;
     margin: auto;
     padding: 0.3em;
@@ -437,7 +437,7 @@ ul {
     border: 2px solid var(--warn);
     border-radius: 0.8em;
     flex-grow: 3;
-    font-size:3vh;
+    font-size:2vh;
     line-height: 1.2em;
     margin: auto;
     padding: 0.3em;
