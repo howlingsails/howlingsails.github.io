@@ -464,6 +464,7 @@ ul {
 
     margin: 0.2em;
     margin-left: 0.5em;
+    margin-bottom: 0.9em;
     padding: 0.5em;
     text-shadow: -2px 2px var(--back);
 }
