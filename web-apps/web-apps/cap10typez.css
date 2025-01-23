@@ -1,0 +1,327 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2d2d2d;
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #00adb5;
+    margin-bottom: 20px;
+}
+
+/* Command Selection Area */
+#selectionArea {
+    width: 80%;
+    max-width: 800px;
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#selectionArea h2 {
+    color: #00adb5;
+    margin-bottom: 10px;
+}
+
+/* Dropdown Menu */
+#categoryDropdown {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+#dropdownButton {
+    background-color: #00adb5;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#dropdownButton:hover {
+    background-color: #019c9f;
+}
+
+/* Dropdown Content */
+#dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #1f1f1f;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 5px;
+}
+
+#dropdownContent button {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+#dropdownContent button:hover {
+    background-color: #00adb5;
+}
+
+/* Add Own Commands */
+#addOwnCommands {
+    margin-top: 20px;
+}
+
+#ownCommandsInput {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    resize: vertical;
+    font-family: monospace;
+    font-size: 14px;
+    background-color: #2d2d2d;
+    color: #f1f1f1;
+}
+#commandsTextArea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    resize: vertical;
+    font-family: monospace;
+    font-size: 14px;
+    background-color: #2d2d2d;
+    color: #f1f1f1;
+}
+
+#addCommandButton {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #00adb5;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#addCommandButton:hover {
+    background-color: #019c9f;
+}
+
+/* Start Button */
+#startButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00adb5;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#startButton:hover {
+    background-color: #019c9f;
+}
+
+/* Game Area */
+#gameArea {
+    display: none;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#commandDescription {
+    font-size: 16px;
+    color: #00adb5;
+    margin-bottom: 10px;
+}
+
+#commandDisplay {
+    background-color: #2d2d2d;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 18px;
+    margin-bottom: 20px;
+    min-height: 50px;
+    word-wrap: break-word;
+}
+
+#typingInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #00adb5;
+    border-radius: 5px;
+    font-family: monospace;
+    background-color: #1f1f1f;
+    color: #f1f1f1;
+}
+
+/* Feedback Sections */
+#feedback {
+    margin-top: 20px;
+    font-size: 18px;
+    min-height: 24px;
+}
+
+#attempts {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ff5722;
+}
+
+#encouragement {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #4caf50;
+}
+
+#points {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #ffd700;
+}
+
+#speed {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #00ff00;
+}
+
+/* Progress Bar */
+#progressContainer {
+    width: 100%;
+    background-color: #444;
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 20px;
+}
+
+#progressBar {
+    width: 0%;
+    height: 100%;
+    background-color: #00adb5;
+    border-radius: 5px;
+    transition: width 0.3s;
+}
+
+/* History Section */
+#history {
+    margin-top: 30px;
+    width: 80%;
+    max-width: 800px;
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#history h2 {
+    color: #00adb5;
+    margin-bottom: 10px;
+}
+
+#historyTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#historyTable th, #historyTable td {
+    border: 1px solid #444;
+    padding: 8px;
+    text-align: center;
+}
+
+#historyTable th {
+    background-color: #00adb5;
+    color: #fff;
+}
+
+/* Charts Section */
+#charts {
+    margin-top: 30px;
+    width: 80%;
+    max-width: 800px;
+    background-color: #1f1f1f;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#charts h2 {
+    color: #00adb5;
+    margin-bottom: 10px;
+}
+
+canvas {
+    background-color: #2d2d2d;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#averages {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Add to cap10typez.css */
+
+#starsDisplay {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #ffd700; /* Gold color for stars */
+}
+
+/* Optional: Style the progress bar text */
+#progressBar {
+    position: relative;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+}
+
+#progressBar::after {
+    content: attr(data-progress);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #selectionArea, #gameArea, #history, #charts {
+        width: 100%;
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+}
